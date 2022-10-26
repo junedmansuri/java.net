@@ -1,2 +1,0 @@
-To execute this networking program you need to open two command promt and run both simentenously .
-you can also send request by browser type 127.0.0.1:8900.
