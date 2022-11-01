@@ -1,0 +1,28 @@
+class Solution {
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+        //we will use sliding window
+        //initilize start =0;
+        int s=0;
+        //intitalize end also =0;
+        int e = 0;
+        //p will calculate ruuning product
+        int p=1;
+        //count will count how many subarrays
+        int count=0;
+        while(e<nums.length){
+            p=p*nums[e];
+          //if our prodect is greter than k remove start product 
+            while(s<nums.length && p>=k){
+                p=p/nums[s];
+                s++;
+            }
+            //count
+            if(p<k)
+                count =count+e-s+1;//it is a kind of formula to calculate subbarays from start to end which product is less then k
+            e++;
+           
+        }
+        
+        return count;
+    }
+}
